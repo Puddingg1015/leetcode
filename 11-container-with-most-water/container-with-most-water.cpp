@@ -5,8 +5,9 @@ public:
         int L = 0;
         int R = height.size()-1;
         while (L < R) {
-            if (min(height[L], height[R])*(R-L) > max) {
-                max = min(height[L], height[R])*(R-L);
+            int area = min(height[L], height[R])*(R-L);
+            if (area > max) {
+                max = area;
             } 
             if (height[L] < height[R]) {
                 L++;
