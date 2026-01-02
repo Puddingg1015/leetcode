@@ -12,7 +12,7 @@ public:
         letters['7'] = vector<char>{'p','q','r','s'};
         letters['8'] = vector<char>{'t','u','v'};
         letters['9'] = vector<char>{'w','x','y','z'};
-        return iteration(digits, vector<string>{""});
+        return solve(digits, vector<string>{""});
     }
 
     vector<string> solve(string digits, vector<string> prev) {
