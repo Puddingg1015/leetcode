@@ -4,9 +4,7 @@ public:
         sort(happiness.begin(), happiness.end());
         long long int out = 0;
         for (int i = 0; i < k; i++) {
-            int cur = happiness.back();
-            if (cur-i <= 0) break;
-            out += cur-i;
+            out += max(happiness.back()-i, 0);
             happiness.pop_back();
         }
         return out;
