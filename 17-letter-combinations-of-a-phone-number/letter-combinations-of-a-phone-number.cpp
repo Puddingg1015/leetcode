@@ -12,7 +12,7 @@ public:
         letters['7'] = vector<char>{'p','q','r','s'};
         letters['8'] = vector<char>{'t','u','v'};
         letters['9'] = vector<char>{'w','x','y','z'};
-        return solve(digits, vector<string>{""});
+        return iteration(digits, vector<string>{""});
     }
 
     vector<string> solve(string digits, vector<string> prev) {
@@ -24,6 +24,19 @@ public:
         if (digits.size() <= 1) return current;
         digits = digits.substr(1);
         return solve(digits, current);
+    }
+
+    vector<string> iteration(string digits, vector<string> prev) {
+        while (digits.size() > 0) {
+            vector<string> current;
+            vector<char> pot_chars = letters[digits[0]];
+            for (string ele : prev) {
+                for (char chr : pot_chars) current.push_back(ele + chr);
+            }
+            prev = current;
+            digits = digits.substr(1);
+        }
+        return prev;
     }
 
 };
