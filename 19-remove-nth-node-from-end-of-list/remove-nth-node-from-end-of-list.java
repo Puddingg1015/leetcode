@@ -18,9 +18,9 @@ class Solution {
             if (k-n > 0) target = target.next;
             curr = curr.next;
             k++;
-            try {
-                System.out.println(curr.val + " " + target + " " + k);
-            } catch (Exception _) {};
+            // try {
+            //     System.out.println(curr.val + " " + target + " " + k);
+            // } catch (Exception _) {};
         }
         if (target == null) {
             return head.next;
