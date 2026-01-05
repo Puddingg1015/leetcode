@@ -37,15 +37,7 @@ class Solution {
 class NodeComparator implements Comparator<ListNode> {
     @Override
     public int compare(ListNode x, ListNode y) {
-        if (x.val < y.val) {
-            return -1;
-        }
-        if (x.val > y.val) {
-            return 1;
-        }
-        if (x.val == y.val && x.next == null) {
-            return 1;
-        }
+        if (x.val > y.val || x.val == y.val && x.next == null) return 1;
         return -1;
     }
 }
