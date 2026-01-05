@@ -20,10 +20,7 @@ public:
                 }
             }
         }
-        if (!(negatives%2)) {
-            return sum;
-        } else {
-            return sum - min_val*2;
-        }
+        if (!(negatives%2)) return sum;
+        else return sum - 2*min_val;
     }
 };
