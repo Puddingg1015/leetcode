@@ -4,7 +4,7 @@ class Solution {
 public:
     long long maxMatrixSum(vector<vector<int>>& matrix) {
         // theory: given any number of operations you can reduce the number of negatives to 1 or 0
-        lng negatives = 0;
+        int negatives = 0;
         lng sum = 0;
         int min_val = 100001;
         for (int i = 0; i < matrix.size(); i++) {
