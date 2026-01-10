@@ -13,9 +13,9 @@ class Solution:
                     min_val[i][j] = min_val[i-1][j-1];
                 else:
                     min_val[i][j] = min(min_val[i-1][j] + ord(s1[i-1]), min_val[i][j-1] + ord(s2[j-1]));
-        print(" ", end = "\t");
-        [print(s2[coli], end = "\t") for coli in range(len(s2))];
-        print();
-        [print(min_val[rowi]) for rowi in range(len(min_val))];
+        # print(" ", end = "\t");
+        # [print(s2[coli], end = "\t") for coli in range(len(s2))];
+        # print();
+        # [print(min_val[rowi]) for rowi in range(len(min_val))];
         return min_val[len(s1)][len(s2)];
             
