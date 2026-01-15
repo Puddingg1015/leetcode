@@ -1,3 +1,5 @@
+// sub 30 min yahhhhh
+
 class Solution {
 public:
     int maximizeSquareHoleArea(int n, int m, vector<int>& hBars, vector<int>& vBars) {
