@@ -1,4 +1,5 @@
 // Dang the time limit here is tight
+// Most annoying medium I've seen so far
 
 #define MMOD ((int)1e9+7)
 #define MSIZE ((int)1e9+2)
@@ -7,16 +8,13 @@
 class Solution {
 public:
 
-    // bool hFencesExists[MSIZE] = {0};
-    // bool vFencesExists[MSIZE] = {0};
-
     int maximizeSquareArea(int m, int n, vector<int>& hFences, vector<int>& vFences) {
         hFences.insert(hFences.begin(), 1);
         hFences.push_back(m);
         vFences.insert(vFences.begin(), 1);
         vFences.push_back(n);
-        sort(hFences.begin(), hFences.end());
-        sort(vFences.begin(), vFences.end());
+        // sort(hFences.begin(), hFences.end());
+        // sort(vFences.begin(), vFences.end());
         unordered_set<lng> hDiffs = diffs(hFences);
         unordered_set<lng> vDiffs = diffs(vFences);
         // printVec(hFences);
@@ -30,14 +28,12 @@ public:
             if (i <= max_side) continue;
             if (diffSizeExists(i, vDiffs)) {
                 max_side = max(max_side, i);
-                // break;
             }
         }
         for (lng i : _vDiffs) {
             if (i <= max_side) continue;
             if (diffSizeExists(i, hDiffs)) {
                 max_side = max(max_side, i);
-                // break;
             }
         }
         if (max_side == -1) return max_side;
@@ -67,7 +63,7 @@ public:
         unordered_set<lng> out;
         for (int i = 0; i < arr.size() - 1; i++) {
             for (int j = i+1; j < arr.size(); j++) {
-                out.insert((lng)arr[j] - arr[i]);
+                out.insert(abs((lng)arr[j] - arr[i]));
             }
         }
         return out;
@@ -82,12 +78,10 @@ public:
         if (side == 'h') {
             for (int i = 0; i < arr.size() - 1; i++) {
                 if (binary_search(arr.begin() + i, arr.end(), arr[i] + diff)) return true;
-                // if (hFencesExists[arr[i] + diff]) return true;
             }
         } else if (side == 'v') {
             for (int i = 0; i < arr.size() - 1; i++) {
                 if (binary_search(arr.begin() + i, arr.end(), arr[i] + diff)) return true;
-                // if (vFencesExists[arr[i] + diff]) return true;
             }
         }
         return false;
