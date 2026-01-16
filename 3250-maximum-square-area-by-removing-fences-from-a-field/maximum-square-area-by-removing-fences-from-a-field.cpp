@@ -3,7 +3,7 @@
 
 #define MMOD ((int)1e9+7)
 #define MSIZE ((int)1e9+2)
-#define lng long long int
+#define lng long int
 
 class Solution {
 public:
@@ -26,15 +26,11 @@ public:
         lng max_side = -1;
         for (lng i : _hDiffs) {
             if (i <= max_side) continue;
-            if (diffSizeExists(i, vDiffs)) {
-                max_side = max(max_side, i);
-            }
+            if (diffSizeExists(i, vDiffs)) max_side = max(max_side, i);
         }
         for (lng i : _vDiffs) {
             if (i <= max_side) continue;
-            if (diffSizeExists(i, hDiffs)) {
-                max_side = max(max_side, i);
-            }
+            if (diffSizeExists(i, hDiffs)) max_side = max(max_side, i);
         }
         if (max_side == -1) return max_side;
         return getModArea(max_side);
@@ -54,7 +50,7 @@ public:
         // return getModArea(max_side);
     }
 
-    int getModArea(long side) {
+    int getModArea(lng side) {
         side %= MMOD;
         return (side * side) % MMOD;
     }
