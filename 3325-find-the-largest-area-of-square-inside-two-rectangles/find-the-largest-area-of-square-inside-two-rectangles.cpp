@@ -8,10 +8,10 @@ public:
         int n = bottomLeft.size();
         vector<vector<int>> inter_bl;
         vector<vector<int>> inter_tr;
-        fori(n) {
-            forj(n) {
+        fori(n-1) {
+            for (int j = i+1; j < n; j++) {
                 // cout << i << " " << j << endl;
-                if (i <= j) continue;
+                // if (i <= j) continue;
                 if (bottomLeft[i][0] >= topRight[j][0] || bottomLeft[i][1] >= topRight[j][1] || 
                         bottomLeft[j][0] >= topRight[i][0] || bottomLeft[j][1] >= topRight[i][1]) continue;
                 // if (topRight[i][0] >= bottomLeft[j][0] && topRight[i][1] >= bottomLeft[j][1]) {
