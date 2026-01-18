@@ -12,7 +12,7 @@ public:
                 sum_matrix[i+1][j+1] += grid[i][j] + sum_matrix[i][j+1] + sum_matrix[i+1][j] - sum_matrix[i][j];
             }
         }
-        cout << grid.size() << " " << grid[0].size() << endl;
+        // cout << grid.size() << " " << grid[0].size() << endl;
         // fori(grid.size()+1) {
         //     forj(grid[0].size()+1) {
         //         cout << sum_matrix[i][j] << " ";
