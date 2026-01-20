@@ -1,3 +1,5 @@
+// funny problem
+
 class Solution {
 public:
 
