@@ -5,6 +5,8 @@
 #define forj(M) for (int j = 0; j < M; j++)
 #define vpair pair<lng, char>
 
+// Dijkstras still works !
+// (Might be a good time to learn Floyd-Warshall)
 
 class Solution {
 public:
