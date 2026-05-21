@@ -9,8 +9,8 @@ class Solution:
 
     def longestCommonPrefix(self, arr1: List[int], arr2: List[int]) -> int:
         maxlen = 0;
-        arr1.sort(reverse=True)
-        arr2.sort(reverse=True)
+        # arr1.sort(reverse=True)
+        # arr2.sort(reverse=True)
         prefixes = set()
         for b in arr2:
             sb = str(b)
