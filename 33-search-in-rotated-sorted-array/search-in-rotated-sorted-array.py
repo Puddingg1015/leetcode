@@ -19,7 +19,7 @@ class Solution:
         self.nums = nums;
         s = len(nums);
         offset = self.findStart(0, s - 1);
-        print(offset)
+        # print(offset)
         l = 0;
         r = s - 1;
         while (l <= r):
