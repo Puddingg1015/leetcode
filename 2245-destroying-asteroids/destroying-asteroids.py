@@ -1,5 +1,5 @@
 class Solution:
     def asteroidsDestroyed(self, mass: int, asteroids: List[int]) -> bool:
-        # chat how are people doing this question in O(N) time :wilted_rose:
-        for i in range(max(bool(asteroids.sort()),len(asteroids))): mass += (asteroids[i] if mass >= asteroids[i] else float("-inf"))
-        return (mass > 0)
+        # one line solution! (amazing i know)
+        # nvm tle'd :(
+        return (cm:=mass) and (min([(cm := cm + (asteroids[i] if cm >= asteroids[i] else float("-inf"))) for i in range(max(bool(asteroids.sort()),len(asteroids)))]) > 0)
