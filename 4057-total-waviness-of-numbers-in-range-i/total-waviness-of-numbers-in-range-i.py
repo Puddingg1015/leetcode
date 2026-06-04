@@ -1,4 +1,5 @@
 class Solution:
+    # Goober questions goober solutions
     def totalWaviness(self, num1: int, num2: int) -> int:
         def waveiness(n):
             if n < 100: return 0
