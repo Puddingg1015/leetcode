@@ -8,16 +8,16 @@
 
 struct ListNode* deleteMiddle(struct ListNode* head) {
         int len = 0;
-        struct ListNode *_curr = head;
-        while (_curr) {
-            _curr = _curr->next;
+        struct ListNode *curr = head;
+        while (curr) {
+            curr = curr->next;
             len++;
         }
         int m = len / 2;
         if (len == 1) {
             return NULL;
         }
-        struct ListNode *curr = head;
+        curr = head;
         struct ListNode *prev = NULL;
         int i = 0;
         while (curr) {
