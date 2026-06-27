@@ -16,9 +16,7 @@ class Solution:
             visited.add(start)
             length = 0
             curr = start
-            # print(start, end=": ")
             while (True):
-                # print((curr, length), end="->")
                 # py builtin upper/lowerbound when
                 lp = bisect_left(nums, curr)
                 rp = bisect_right(nums, curr)
@@ -36,5 +34,4 @@ class Solution:
                 curr *= curr
             if length > maxlen:
                 maxlen = length
-            # print("; ", length)
         return maxlen
